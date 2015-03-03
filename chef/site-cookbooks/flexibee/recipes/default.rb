@@ -21,15 +21,14 @@ packages.each do |pkg|
   end
 end
 
-cookbook_file "/tmp/flexibee_2014.4.6_all.deb" do 
-  source "flexibee_2014.4.6_all.deb"
-  mode 0644
+apt_repository 'download.flexibee.eu' do
+  uri 'http://download.flexibee.eu/download/deb-repository/'
+  distribution "flexibee"
+  components ['non-free']
+  keyserver    'keyserver.ubuntu.com'
+  key          '70E18E2B'
+  action :add
 end
-
-#remote_file "/tmp/flexibee_2014.4.6_all.deb" do	
-#  source "http://download.flexibee.eu/download/2014.4/2014.4.6/flexibee_2014.4.6_all.deb"
-#  mode 0644
-#end
 
 cookbook_file "/tmp/flexibee.seed" do
   source "flexibee.seed"
@@ -40,10 +39,10 @@ execute "preseed flexibee" do
   action :run
 end
 
-dpkg_package "flexibee" do
-  source "/tmp/flexibee_2014.4.6_all.deb"
-  action [:install]
+apt_package "flexibee" do
+  action :install
 end
+
 
 # distribute settings for request authentification
 # see http://www.flexibee.eu/api/doc/ref/batch-api

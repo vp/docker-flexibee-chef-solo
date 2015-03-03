@@ -11,7 +11,7 @@
       "host": "localhost",
       "port": 5435,
       "user": "dba",
-      "password": "7971"
+      "password": "strong_secure_password"
     },
     "smtp": {
       "host": "localhost",
@@ -33,7 +33,7 @@
     "version": "9.1",
     "password": {
       "postgres": "postgres",
-      "dba": "7971"
+      "dba": "strong_secure_password"
     },
     "config": {
       "ssl": false,
