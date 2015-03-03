@@ -1,0 +1,16 @@
+<flexibee-batch id="flexibee-admin-batch"><!-- ID by mělo unikátně označovat dávku -->
+    <user>
+        <username>admin</username>
+        <password>0admin0admin0admin</password>        
+        <permissions>
+            <manageAll>true</manageAll>
+            <createCompany>true</createCompany>
+            <deleteCompany>true</deleteCompany>
+            <createUser>true</createUser>
+            <changePassword>true</changePassword>
+            <grantPermission>true</grantPermission>
+            <licenseManagement>true</licenseManagement>
+        </permissions>
+        <defaultRole>UZIVATEL</defaultRole>
+    </user>
+</flexibee-batch>

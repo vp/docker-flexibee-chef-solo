@@ -1,0 +1,3 @@
+flexibee winstrom/server-client select server
+flexibee winstrom/local-network select network
+flexibee winstrom/remove-db boolean false

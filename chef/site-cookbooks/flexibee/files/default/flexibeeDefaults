@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Default configuration for FlexiBee
+
+# Configuration of WinStrom. Can have values client/server/local
+FLEXIBEE_CFG=server
+
+# Change this if you want to use sudo for starting WinStrom database.
+# USE_SUDOERS=1
+
+# The lines below are for extra system settings
+#
+# Java executable for FlexiBee (including bin/java)
+# FLEXIBEE_JAVA=
+
+# Extra WinStrom args
+# FLEXIBEE_ARGS=
+
+# Extra FlexiBee Server args
+# FLEXIBEE_SERVER_ARGS=
+
+# Extra arguments for classpath
+# CLASSPATH=
+
+# Extra arguments for Java Client (like -client).  
+# FLEXIBEE_JAVA_ARGS="${FLEXIBEE_JAVA_ARGS} "
+
+# Extra arguments for Java Server (like -client).  
+FLEXIBEE_SERVER_JAVA_ARGS="${FLEXIBEE_SERVER_JAVA_ARGS} -Xmx2G"
+
+# User to run server under.
+FLEXIBEE_USER="winstrom"

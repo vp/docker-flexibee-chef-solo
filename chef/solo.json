@@ -1,0 +1,70 @@
+{
+  "localegen" : {
+    "lang" : ["en_US.UTF-8 UTF-8", "cs_CZ.UTF-8 UTF-8"]
+  },
+  "locale" : {
+    "lang" : "cs_CZ.utf8",
+    "lc_all" : "cs_CZ.utf8"
+  },
+  "flexibee": {
+    "database": {
+      "host": "localhost",
+      "port": 5435,
+      "user": "dba",
+      "password": "7971"
+    },
+    "smtp": {
+      "host": "localhost",
+      "defaultFrom": "test@test.dev",
+      "user": "",
+      "password": "",
+      "encryption": "STARTTLS",
+      "port": 25
+    },
+    "port": 5434,
+    "sendErrors": "never",
+    "forceHttps": "redirect",
+    "auth": {
+      "user" : "admin",
+      "password" : "0admin0admin0admin"
+    }
+  },
+  "postgresql": {
+    "version": "9.1",
+    "password": {
+      "postgres": "postgres",
+      "dba": "7971"
+    },
+    "config": {
+      "ssl": false,
+      "listen_addresses": "*"
+    },
+    "initdb_locale" : "cs_CZ.utf-8",
+    "pg_hba" : [ 
+      { 
+        "comment": "# Allow remote connections",
+         "type": "host",
+         "db" : "all",
+         "user": "all",
+         "addr": "0.0.0.0/0",
+         "method": "md5" 
+       }
+    ]
+  },
+  "java" : {
+    "install_flavor" : "openjdk",
+    "accept_license_agreement" : true,
+    "jdk_version" : "7",
+    
+    "oracle" : {
+      "accept_oracle_download_terms" : true
+    },
+    "oracle_rpm" : {
+      "type" : "jre"
+    }   
+  },
+  
+  "run_list":[
+    "recipe[flexibee::default]"
+  ]
+}

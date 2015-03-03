@@ -1,0 +1,10 @@
+#site :opscode
+source "https://supermarket.chef.io"
+
+cookbook 'apt'
+cookbook 'locale'
+cookbook 'locale-gen'
+cookbook 'locales'
+cookbook 'postgresql', '= 3.4.1'
+cookbook 'java'
+
