@@ -88,6 +88,14 @@ cookbook_file "/etc/postgresql/9.1/flexibee/postgresql.conf" do
   notifies :restart, "service[postgresql]", :delayed
 end
 
+bash "assign-dba-password" do
+  user 'postgres'
+  code <<-EOH
+  echo "ALTER ROLE dba ENCRYPTED PASSWORD '#{node['flexibee']['database']['password']}';" | psql -p #{node['flexibee']['database']['port']}
+  EOH
+  action :run
+end
+
 service "postgresql" do
   supports :restart => true, :reload => true
   provider Chef::Provider::Service::Init::Debian

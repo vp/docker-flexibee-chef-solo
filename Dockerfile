@@ -28,7 +28,7 @@ RUN chef-solo -c /chef/solo.rb -j /chef/solo.json
 # CONFIGURE VOLUMES
 VOLUME  ["/etc/flexibee". "/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 
-EXPOSE 5435 5432 5434
+EXPOSE 5435 5434
 
 # PREPARE AND RUN SUPERVISOR
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
