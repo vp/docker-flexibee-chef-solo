@@ -43,3 +43,9 @@ flexibee server will be avaible on:
 postgresql on:
   
     172.17.42.1:5435
+    
+To access shell on running container use:
+
+    docker exec flexibee bash
+
+Instead bash you can run whenever unix command you want..
